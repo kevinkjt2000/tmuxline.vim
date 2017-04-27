@@ -216,9 +216,9 @@ let g:tmuxline_theme = {
 
 The plugin's files follow the standard layout for vim plugins.
 
-- [Pathogen][8] `git clone https://github.com/edkolev/tmuxline.vim ~/.vim/bundle/tmuxline.vim`
-- [Vundle][9] `Bundle 'edkolev/tmuxline.vim'`
-- [NeoBundle][10] `NeoBundle 'edkolev/tmuxline.vim'`
+- [Pathogen][8] `git clone https://github.com/kevinkjt2000/tmuxline.vim ~/.vim/bundle/tmuxline.vim`
+- [Vundle][9] `Bundle 'kevinkjt2000/tmuxline.vim'`
+- [NeoBundle][10] `NeoBundle 'kevinkjt2000/tmuxline.vim'`
 
 ## Inspired by
 
