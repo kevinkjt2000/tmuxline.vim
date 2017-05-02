@@ -138,6 +138,7 @@ endfun
 fun! tmuxline#snapshot(file, overwrite) abort
   let file = fnamemodify(a:file, ":p")
   let dir = fnamemodify(file, ':h')
+  let version_under_22 = system("tmux -V | awk '{print ($2 < 2.2)}'")
 
   if (len(s:snapshot) == 0)
     echohl ErrorMsg | echomsg ":Tmuxline should be executed before :TmuxlineSnapshot" | echohl None
@@ -157,6 +158,11 @@ fun! tmuxline#snapshot(file, overwrite) abort
   let lines += [ '# This tmux statusbar config was created by tmuxline.vim']
   let lines += [ '# on ' . strftime("%a, %d %b %Y") ]
   let lines += [ '' ]
+
+  if version_under_22
+      let lines += [ 'set -g status-utf8 "on"' ]
+  endif
+
   let lines += s:snapshot
 
   call writefile(lines, file)
